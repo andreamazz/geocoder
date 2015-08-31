@@ -22,6 +22,8 @@ module Geocoder
 
       logger = Geocoder.config[:logger]
 
+      return nil unless logger
+
       if logger == :kernel
         kernel_log(level, message)
       elsif logger.respond_to? :add
